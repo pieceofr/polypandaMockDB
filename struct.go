@@ -85,18 +85,12 @@ func encodeNumberToHexString(n *number.Number) string {
 	return hex.EncodeToString(geneBytes)
 }
 
-func ethAddrToHexString(addr EthAddr) string {
-	arrayToSlice := addr[:]
-	return hex.EncodeToString(arrayToSlice)
-}
-
-/*GetPrintingString printout panda in json format*/
-func (p *Panda) GetPrintingString() string {
+/*GetString printout panda in json format*/
+func (p *Panda) GetString() string {
 	print := fmt.Sprintf("{\n PandaIndex:%v\n Genes:%s\n Birthtime:%v\n Cooldown:%v\n Rank:%v\n "+
 		"MotherID:%v\n FatherID:%v\n Generation:%v\n Owner:%v\n Ownername:%v\n Photourl:%v\n Snapurl:%v\n}",
 		p.PandaIndex, geneToStringInBinary(p.Genes), p.Birthtime, p.Cooldown, p.Rank,
 		p.MotherID, p.FatherID, p.Generation, ethAddrToHexString(p.Owner), p.Ownername, p.Photourl, p.Snapurl)
-
 	return print
 }
 
