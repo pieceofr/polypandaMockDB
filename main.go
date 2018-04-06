@@ -61,9 +61,9 @@ func printAllPandas(pandas []Panda) {
 	printStr := ""
 	for idx, val := range pandas {
 		if idx == 0 {
-			printStr = fmt.Sprintf("%s[\n%v,", printStr, val.GetPrintingString())
+			printStr = fmt.Sprintf("%s[\n%v,", printStr, val.GetString())
 		} else if idx == len(pandas)-1 {
-			printStr = fmt.Sprintf("%s\n%v\n]", printStr, val.GetPrintingString())
+			printStr = fmt.Sprintf("%s\n%v\n]", printStr, val.GetString())
 		}
 	}
 	log.Println(printStr)
